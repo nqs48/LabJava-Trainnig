@@ -10,7 +10,18 @@ public class Messages {
 
     }
 
-    public static void printMessage(String message) {
+    public static String printMessage(String message) {
         LOGGER.info(message);
+        return message;
+    }
+
+    public static String printWarning(String message) {
+        LOGGER.warn(message);
+        return message;
+    }
+
+    public static String printError(String message) {
+        LOGGER.error(message);
+        return message;
     }
 }
