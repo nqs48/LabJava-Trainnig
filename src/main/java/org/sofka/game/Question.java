@@ -1,4 +1,4 @@
 package org.sofka.game;
 
-public class Pregunta {
+public class Question {
 }
