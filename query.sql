@@ -1,54 +1,20 @@
--- -----------------------------------------------------
--- Schema mydb
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE DATABASE `gamebdwho` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 
--- -----------------------------------------------------
--- Table `mydb`.`gamer`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`gamer` (
-  `gamer_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `score` VARCHAR(45) NULL,
-  PRIMARY KEY (`gamer_id`))
-ENGINE = InnoDB;
+CREATE TABLE `gamer` (
+                         `game_id` int(11) NOT NULL AUTO_INCREMENT,
+                         `name` varchar(45) NOT NULL,
+                         `email` varchar(255) NOT NULL,
+                         `score` int(10) unsigned DEFAULT NULL,
+                         PRIMARY KEY (`game_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
+CREATE TABLE `question` (
+                            `question_id` int(11) NOT NULL AUTO_INCREMENT,
+                            `asnwer_false01` text NOT NULL,
+                            `answer_false02` text NOT NULL,
+                            `answer_false03` text NOT NULL,
+                            `answer_true` text NOT NULL,
+                            `level` int(11) NOT NULL,
+                            PRIMARY KEY (`question_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- -----------------------------------------------------
--- Table `mydb`.`question`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`question` (
-  `question_id` INT NOT NULL AUTO_INCREMENT,
-  `asnwer_false01` TEXT(1000) NULL,
-  `answer_false02` TEXT(1000) NULL,
-  `answer_false03` TEXT(1000) NULL,
-  `answer_true` TEXT(1000) NULL,
-  `level` INT NOT NULL,
-  PRIMARY KEY (`question_id`))
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`game`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`game` (
-  `gamer_id` INT NOT NULL AUTO_INCREMENT,
-  `gamer_gamer_id` INT NOT NULL,
-  `question_question_id` INT NOT NULL,
-  `date` VARCHAR(60) NOT NULL,
-  PRIMARY KEY (`gamer_id`),
-  INDEX `fk_game_gamer_idx` (`gamer_gamer_id` ASC) VISIBLE,
-  INDEX `fk_game_question1_idx` (`question_question_id` ASC) VISIBLE,
-  CONSTRAINT `fk_game_gamer`
-    FOREIGN KEY (`gamer_gamer_id`)
-    REFERENCES `mydb`.`gamer` (`gamer_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_game_question1`
-    FOREIGN KEY (`question_question_id`)
-    REFERENCES `mydb`.`question` (`question_id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
