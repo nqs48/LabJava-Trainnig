@@ -1,9 +1,11 @@
 package org.sofka.game.view;
 
 import org.jboss.logging.Logger;
+import org.sofka.game.configuration.Configuration;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.util.Properties;
 
 public class ConnectionTest {
 
@@ -11,10 +13,11 @@ public class ConnectionTest {
 
     public static void main(String[] args) {
 
-        String driver = "com.mysql.jdbc.Driver";
-        String user = "root";
-        String password = "root";
-        String url = "jdbc:mysql://localhost:8889/GameBDWho?useSSL=false";
+        Properties properties = Configuration.environmentProperties();
+        String driver = properties.getProperty("driver");
+        String user = properties.getProperty("user");
+        String password = properties.getProperty("password");
+        String url = properties.getProperty("url");
         java.sql.Connection connection;
 
 
