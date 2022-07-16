@@ -31,17 +31,25 @@ public class Main {
             switch (user) {
                 case 1 -> {
                     Messages.printMessage("\n\n\t\t\t\t\t\t\t+Game" + separator);
-                    String name= input.nextLine();
-                    String email= input.nextLine();
+                    String name= Messages.printMessage("Name: "+input.nextLine());
+                    String email= Messages.printMessage("Email: "+input.nextLine());
 
                     Gamer g1= new Gamer(name,email);
-                    int id=mldGamer.createGamer(g1);
-                    Messages.printMessage("El ID es: "+id);
+                    //int id=mldGamer.createGamer(g1);
+                    //Messages.printMessage("El ID es: "+id);
+                    ArrayList[] data= mldQuestion.FindQuestions("questions");
+                    ArrayList pregunta= data[0];
 
+                    int userRes =menu.printQuestionMenu(separator,pregunta);
+                    String res= pregunta.get(userRes+1).toString();
+                    String correctAns=pregunta.get(6).toString();
 
-                    ArrayList[] data= mldQuestion.FindQuestions("gamer");
-
-                    Messages.printMessage(data[4].toString()+"\n\n");
+                    Messages.printMessage("hi"+input.nextLine());
+                    if(correctAns.equals(res)){
+                        Messages.printMessage("Correct");
+                    }else{
+                        Messages.printMessage("Incorrect");
+                    }
 
                 }
                 case 2 -> {
