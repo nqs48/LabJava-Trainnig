@@ -23,7 +23,7 @@ public class MldQuestion {
             Statement statementPlan = conn.createStatement();
             ResultSet result = statementPlan.executeQuery(query);
             int columnas = result.getMetaData().getColumnCount();
-            ArrayList[] table = new ArrayList[25];
+            ArrayList[] table = new ArrayList[30];
 
             while (result.next()) {
                 table[e] = new ArrayList();

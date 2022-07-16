@@ -54,10 +54,13 @@ public class Main {
                 }
                 case 2 -> {
                     Messages.printMessage("\n\n\t\t\t\t+Gamers" + separator);
-                    ArrayList[] data= mldQuestion.FindQuestions("gamer");
+                    ArrayList[] data= mldQuestion.FindQuestions("questions");
                     for (int i=0 ; i<= data.length; i++){
                         System.out.println(data[i]);
                     }
+
+
+
                 }
                 case 3 -> {
                     Messages.printMessage("\n\nThe program is over \n\nCreated By:\t< Nestor Quiroga -- Victor Roca/>");;
