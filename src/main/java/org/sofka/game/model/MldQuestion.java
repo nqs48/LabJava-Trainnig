@@ -12,18 +12,18 @@ public class MldQuestion {
 
     DBConnection data = new DBConnection();
 
-    public ArrayList[] FindQuestions(String st) {
+    public ArrayList[] FindQuestions(int level) {
 
         DBConnection db = new DBConnection();
         int e = 0;
         try (Connection conn = DriverManager.getConnection(db.getUrl(),
                 db.getUser(), db.getPassword())) {
 
-            String query = "SELECT * FROM " + st + " WHERE 1";
+            String query = "SELECT * FROM `questions` WHERE `level` = "+level;
             Statement statementPlan = conn.createStatement();
             ResultSet result = statementPlan.executeQuery(query);
             int columnas = result.getMetaData().getColumnCount();
-            ArrayList[] table = new ArrayList[25];
+            ArrayList[] table = new ArrayList[5];
 
             while (result.next()) {
                 table[e] = new ArrayList();
