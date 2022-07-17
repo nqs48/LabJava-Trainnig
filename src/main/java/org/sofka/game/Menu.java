@@ -59,10 +59,13 @@ public class Menu {
 
     public void renderGamers(ArrayList[] gamers) {
 
-        for (int i = 0; i < gamers.length; i++) {
-            Messages.printMessage("\n" + gamers[i] + "\n\n");
+//        for (int i = 0; i < gamers.length; i++) {
+//            Messages.printMessage("\n" + gamers[i] + "\n\n");
+//
+//        }
 
-        }
+        String result = String.join(",", Arrays.toString(gamers)).replace("]", "\n").replace("[", "");
+        Messages.printMessage(result);
 
     }
 

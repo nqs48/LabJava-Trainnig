@@ -30,9 +30,7 @@ public class Game {
         level = 1;
         idGame= 1;
 
-        for (int i = 0; i < questions.length; i++) {
-            Messages.printMessage(questions[i].toString());
-        }
+
 
 
 
@@ -61,15 +59,15 @@ public class Game {
     public void comboQuestions(){
         questions =new ArrayList[5];
         for(int i=0; i<questions.length; i++){
-            questions[i]=new ArrayList();
             int random = r.nextInt(4 - 1 + 1) + 1;
             ArrayList[] questionForLevel= mldQuestion.FindQuestions(i+1);
-            ArrayList pregunta =questionForLevel[random];
-            questions[i].add(pregunta);
+            questions[i] =questionForLevel[random];
         }
     }
 
-
+    public ArrayList[] getQuestions() {
+        return questions;
+    }
 
     public void infoGame(){
         Messages.printMessage("\nGamer: " +gamer.getName()+

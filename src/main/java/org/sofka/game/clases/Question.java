@@ -21,7 +21,6 @@ public class Question {
             questionMap.put(OPTIONS.get(i), options.get(i));
         }
         questionMap.put("answer", answer);
-        System.out.println(questionMap);
         if(questionMap.get(userAnswer).equals(questionMap.get("answer"))) {
             return true;
         }
@@ -49,5 +48,9 @@ public class Question {
 
     public ArrayList<String> getQuestionInformation() {
         return questionInformation;
+    }
+
+    public String getQuestionText() {
+        return questionInformation.get(1);
     }
 }
