@@ -112,11 +112,12 @@ public class Game {
     /**
      * Prints gamer general Information
      */
-    public void infoGame(){
-        Messages.printMessage("\nGamer: " +gamer.getName()+
+    public void infoGame(String separator){
+        Messages.printMessage("\n\t\tINFORMATION GAMER | GAME" + separator+
+                "\nGamer: " +gamer.getName()+
                 "\nEmail: " +gamer.getEmail()+
                 "\nScore: " +gamer.getScore()+
-                "\nGame Level: "+level);
+                "\nGame Level: "+(level-1)+"\n\n");
     }
 
 
@@ -144,7 +145,7 @@ public class Game {
             menuAswers(question.getQuestionText(), question.getTemporalOptions(), i + 1);
                 String answer = input.nextLine().toUpperCase(Locale.ROOT);
                     if(answer.equals("E")){
-                        Messages.printMessage("\n\nYou left the game!!\t\tSave "+gamer.getScore()+ " points. \n\nThank You!!!");
+                        Messages.printMessage("\n\nYou left the game!!\t\tSave "+gamer.getScore()+ " points. \n\nThank You!!!\n\n");
                         break;
                     }else if (question.validateAnswer(answer)) {
                         Messages.printMessage("\n\nYou right!!\t\tEarn 1000 pts \n");
@@ -154,7 +155,7 @@ public class Game {
                         setLevel(actualLevel+1);
                         continue;
                     } else {
-                        Messages.printMessage("\n\nYou Failed!!\t\tLose all points. \n\nGood Bye!!!");
+                        Messages.printMessage("\n\nYou Failed!!\t\tLose all points. \n\nGood Bye!!!\n\n");
                         getGamer().setScore(0);
                         break;
                     }

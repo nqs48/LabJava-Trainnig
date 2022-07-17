@@ -26,6 +26,7 @@ public class Main {
                     Game game = new Game();
                     Gamer gamer= game.getGamer();
                     mldGamer.createGamer(gamer);
+                    game.infoGame(separator);
                 }
                 case 2 -> {
                     Messages.printMessage("\n\n\t\t\t\t+Gamers" + separator);
