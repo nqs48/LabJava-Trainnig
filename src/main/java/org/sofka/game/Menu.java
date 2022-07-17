@@ -3,6 +3,7 @@ package org.sofka.game;
 import org.sofka.game.utils.Messages;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -15,8 +16,9 @@ public class Menu {
             int user;
             Messages.printMessage("\n\t\tWHO WANTS MILLIONAIRE ? | MAIN MENU" + separator+
                 "\n| 1. Start Game: (1)"+
-                "\n| 2. View Winners: (2)"+
-                "\n| 3. EXIT APP: (3)" + separator+
+                "\n| 2. View all Gamers: (2)"+
+                "\n| 3. Search a Gamer: (3)"+
+                "\n| 4. EXIT APP: (4)" + separator+
                 "\nEnter the number of your process:");
             Scanner inputMain = new Scanner(System.in);
             user = inputMain.nextInt();
@@ -55,5 +57,13 @@ public class Menu {
     }
 
 
+    public void renderGamers(ArrayList[] gamers) {
+
+        for (int i = 0; i < gamers.length; i++) {
+            Messages.printMessage("\n" + gamers[i] + "\n\n");
+
+        }
+
+    }
 
 }

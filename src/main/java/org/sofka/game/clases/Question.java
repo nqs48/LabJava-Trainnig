@@ -28,7 +28,6 @@ public class Question {
             return false;
 
 
-
     }
     public ArrayList<String> getOptions() {
         ArrayList<String> options = new ArrayList<>();
