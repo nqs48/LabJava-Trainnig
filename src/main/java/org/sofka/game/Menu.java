@@ -17,8 +17,7 @@ public class Menu {
             Messages.printMessage("\n\t\tWHO WANTS MILLIONAIRE ? | MAIN MENU" + separator+
                 "\n| 1. Start Game: (1)"+
                 "\n| 2. View all Gamers: (2)"+
-                "\n| 3. Search a Gamer: (3)"+
-                "\n| 4. EXIT APP: (4)" + separator+
+                "\n| 3. EXIT APP: (3)" + separator+
                 "\nEnter the number of your process:");
             Scanner inputMain = new Scanner(System.in);
             user = inputMain.nextInt();

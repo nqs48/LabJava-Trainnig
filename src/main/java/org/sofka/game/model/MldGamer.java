@@ -42,7 +42,7 @@ public class MldGamer {
             Statement statementPlan = conn.createStatement();
             ResultSet result = statementPlan.executeQuery(query);
             int columnas = result.getMetaData().getColumnCount();
-            ArrayList[] table = new ArrayList[22];
+            ArrayList[] table = new ArrayList[25];
             while (result.next()) {
                 table[e] = new ArrayList();
                 int i = 1;

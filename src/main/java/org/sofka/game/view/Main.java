@@ -9,6 +9,7 @@ import org.sofka.game.model.MldQuestion;
 import org.sofka.game.utils.Messages;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -36,29 +37,10 @@ public class Main {
                 case 1 -> {
                     Messages.printMessage("\n\n\t\t\t\t\t\t\t+Game" + separator);
                     Game game = new Game();
-                    ArrayList[] questions = game.getQuestions();
-                    for (int i = 0; i < questions.length; i++) {
-                        Question question = new Question(questions[i]);
-                        System.out.println(question.getQuestionText());
-                        question.showQuestionInformation();
-                        System.out.println(question.getTemporalOptions());
-                        System.out.println("Tu respuesta: ");
-                        String answer = input.nextLine();
-                        if (question.validateAnswer(answer)) {
-                            System.out.println("Correcto");
-                            continue;
-                        } else {
-                            System.out.println("Incorrecto");
-                            break;
-                        }
-                    }
+                    Gamer gamer= game.getGamer();
+                    mldGamer.createGamer(gamer);
+
                 }
-
-
-
-
-
-
                 case 2 -> {
                     Messages.printMessage("\n\n\t\t\t\t+Gamers" + separator);
                     ArrayList[] gamers= mldGamer.allGamers();
@@ -84,9 +66,6 @@ public class Main {
 
                 }
                 case 3 -> {
-
-
-
 
 
                 }
