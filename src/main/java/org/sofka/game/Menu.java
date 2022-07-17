@@ -63,8 +63,12 @@ public class Menu {
 //
 //        }
 
-        String result = String.join(",", Arrays.toString(gamers)).replace("]", "\n").replace("[", "");
-        Messages.printMessage(result);
+        String result = String.join(",", Arrays.toString(gamers)).
+                replace("]", "\n").
+                replace("[", "").
+                replace("null","").
+                replace(",","");
+        Messages.printMessage("\n" + result);
 
     }
 
