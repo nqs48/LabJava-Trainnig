@@ -60,7 +60,7 @@ public class MldGamer {
 
 
 
-    //Aun en desarrollo (Still Working)
+
     public int numberGamers(){
         try (Connection conn = DriverManager.getConnection(data.getUrl(),
                 data.getUser(), data.getPassword())) {

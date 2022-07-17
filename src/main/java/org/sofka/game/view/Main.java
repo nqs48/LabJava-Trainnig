@@ -48,22 +48,6 @@ public class Main {
 
 
 
-//                    ArrayList[] data= mldQuestion.FindQuestions(1);
-////                    for (int i=0 ; i<= data.length; i++){
-////                        System.out.println(data[i]);
-////                    }
-//
-//                    ArrayList pregunta= data[4];
-//                    Question question = new Question(pregunta);
-//                    System.out.println(question.getQuestionInformation());
-//                    question.showQuestionInformation();
-//                    System.out.println(question.getTemporalOptions());
-//                    System.out.println("Respuesta");
-//                    String res= input.nextLine();
-//
-//                    System.out.println(question.validateAnswer(res));
-
-
                 }
                 case 3 -> {
 
