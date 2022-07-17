@@ -8,10 +8,25 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+
+
+/**
+ * @author Nestor Quiroga
+ * @author Victor Roca
+ * Class MldQuestion to get the questions data
+ */
 public class MldQuestion {
 
+    /**
+     * Instance of DBConnection
+     */
     DBConnection data = new DBConnection();
 
+    /**
+     * This method finds the questions filter for levels
+     * @param level value to filter the data
+     * @return ArrayList the questions filter for level
+     */
     public ArrayList[] FindQuestions(int level) {
 
         DBConnection db = new DBConnection();
