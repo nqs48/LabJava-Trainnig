@@ -37,7 +37,7 @@ public class Main {
                     Gamer g1= new Gamer(name,email);
                     //int id=mldGamer.createGamer(g1);
                     //Messages.printMessage("El ID es: "+id);
-                    ArrayList[] data= mldQuestion.FindQuestions("questions");
+                    ArrayList[] data= mldQuestion.FindQuestions(1);
                     ArrayList pregunta= data[0];
 
                     int userRes =menu.printQuestionMenu(separator,pregunta);
@@ -54,10 +54,22 @@ public class Main {
                 }
                 case 2 -> {
                     Messages.printMessage("\n\n\t\t\t\t+Gamers" + separator);
-                    ArrayList[] data= mldQuestion.FindQuestions("questions");
-                    for (int i=0 ; i<= data.length; i++){
-                        System.out.println(data[i]);
-                    }
+                    ArrayList[] data= mldQuestion.FindQuestions(1);
+//                    for (int i=0 ; i<= data.length; i++){
+//                        System.out.println(data[i]);
+//                    }
+
+                    ArrayList pregunta= data[4];
+                    Question question = new Question(pregunta);
+                    System.out.println(question.getQuestionInformation());
+                    question.showQuestionInformation();
+                    System.out.println(question.getTemporalOptions());
+                    System.out.println("Respuesta");
+                    String res= input.nextLine();
+
+                    System.out.println(question.validateAnswer(res));
+
+
 
 
 
